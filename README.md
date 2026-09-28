@@ -16,7 +16,7 @@ Self-hosted voice, video and chat for a group. It's organised like Discord (spac
 
 ---
 
-## Run it on Debian
+## Run it on Debian (Cause.. I use Debian, btw)
 
 Call-me needs **Node.js 22.13 or newer** because it uses the built-in `node:sqlite`. The `nodejs` package in Debian's own repositories is often older, so check first:
 
