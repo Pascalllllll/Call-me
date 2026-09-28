@@ -1,0 +1,25 @@
+{
+  "name": "call-me",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Call-me: self-hosted voice, video and chat spaces with no call time limits.",
+  "type": "module",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "tunnel": "node scripts/tunnel.js",
+    "test": "node --test --test-concurrency=1 test/*.test.js",
+    "test:e2e": "node --test test/e2e/*.e2e.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^5.2.1",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.12.0"
+  }
+}
