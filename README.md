@@ -363,3 +363,11 @@ docs/           screenshots used in this README
 ```
 
 There's no build step: the browser loads the files in `public/` as they are.
+
+---
+
+## License
+
+Copyright (c) 2026 Pascalllllll. All rights reserved. See [LICENSE](LICENSE).
+
+The Figtree and Fraunces fonts in `public/fonts/` are under the SIL Open Font License 1.1.
