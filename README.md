@@ -34,7 +34,8 @@ sudo apt install -y nodejs
 Then install and start the app:
 
 ```sh
-cd Callme
+git clone https://github.com/Pascalllllll/Call-me.git
+cd Call-me
 npm install
 npm start
 ```
