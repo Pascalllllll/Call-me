@@ -2,7 +2,7 @@
 
 Self-hosted voice, video and chat for a group. It's organised like Discord (spaces with text and voice channels) and works like Zoom (one click gives you a meeting and a link to share). Calls have no time limit.
 
-![A video call in Call-me's dark theme: spaces on the left, the Lounge voice channel with one participant, a camera tile in the middle with call controls below, and the online member list on the right.](docs/call-camera.png)
+![A video call in Call-me's dark theme: spaces on the left, the Meeting room voice channel with one participant, a camera tile in the middle with call controls below, and the online member list on the right.](docs/call-camera.png)
 
 - **Spaces** with text and voice channels, roles (owner, admin, member), invite links, kick and ban
 - **Calls**: voice, camera, screen sharing, mute and deafen, speaking indicators, focus view
@@ -57,7 +57,7 @@ Browsers only allow camera and microphone on `localhost` or over HTTPS. Other de
 
 | Dark | Light |
 | --- | --- |
-| <img src="docs/chat-dark.png" alt="The #general text channel in the dark theme, with the space list, channel list, message box and member list." width="400"> | <img src="docs/chat-light.png" alt="The same #general text channel in the light theme." width="400"> |
+| <img src="docs/voice-dark.png" alt="The Meeting room voice channel in the dark theme, before joining: the space list, channel list, a violet Join call button and the member list." width="400"> | <img src="docs/voice-light.png" alt="The same voice channel in the light theme, with a gold Join call button." width="400"> |
 
 ### Spaces
 
@@ -100,7 +100,7 @@ Open a voice channel and click **Join call**. Your mic is on when you join. Came
 
 <img src="docs/call-screen-share.png" alt="A call with a shared browser tab filling the main tile, the sharer's own tile below it, and Stop sharing highlighted in the call controls. The sidebar marks the sharer as Live." width="720">
 
-- A **marigold ring** shows who is speaking, both on the video tile and in the sidebar.
+- An **accent ring** (gold in light mode, violet in dark) shows who is speaking, both on the video tile and in the sidebar.
 - Click the expand icon on a tile to **focus** it (useful for screen shares). Click the X to go back to the grid.
 - While you're in a call, the panel at the bottom of the sidebar keeps your mute, deafen and leave controls handy as you move between channels.
 - You can be in one call at a time. Joining a call from another tab or device moves you there.

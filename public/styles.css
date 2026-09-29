@@ -1,4 +1,4 @@
-/* Cream neutrals with one marigold accent for joining, talking and the current selection.
+/* Pale white neutrals with one gold accent (light) or violet accent (dark) for joining, talking and the current selection.
    Red only on leave/delete, sage only for "online". */
 
 @font-face {
@@ -18,27 +18,31 @@
 }
 
 :root {
-  --bg: #faf5ee;
-  --surface: #fffdf9;
-  --surface-2: #f2eadf;
-  --rail: #ebe1d3;
-  --text: #2a211b;
-  --muted: #6b5d52;
-  --border: #e3d8c9;
-  --accent: #f2a93b;
-  --accent-ink: #2a1a05;
-  --accent-text: #8a4b00;
-  --accent-soft: #fcebc9;
+  --bg: #fbfaf6;
+  --surface: #ffffff;
+  --surface-2: #f4f1e8;
+  --rail: #efebdf;
+  --text: #1f1c14;
+  --muted: #676050;
+  --border: #e6e0cf;
+  --accent: #c9a227;
+  --accent-ink: #231a00;
+  --accent-text: #7a5f00;
+  --accent-soft: #f6eecb;
   --danger: #b3261e;
   --danger-ink: #ffffff;
   --ok: #2f7d4f;
-  --focus: #a55d00;
-  --stage: #221b17;
-  --tile: #332a24;
-  --stage-text: #f3ebe1;
-  --ctrl: #3a302a;
-  --ctrl-hover: #4a3e36;
-  --shadow: 0 18px 50px rgba(60, 38, 18, 0.18);
+  --focus: #8a6c00;
+  --stage: #1f1c16;
+  --tile: #2e2a21;
+  --tile-avatar: #4a4230;
+  --tile-avatar-text: #f6eecb;
+  --stage-text: #f5f1e6;
+  --ctrl: #38332a;
+  --ctrl-hover: #474035;
+  --overlay: rgba(16, 14, 10, 0.72);
+  --scrim: rgba(24, 20, 10, 0.45);
+  --shadow: 0 18px 50px rgba(60, 50, 20, 0.14);
   --r-lg: 16px;
   --r: 10px;
   --r-sm: 6px;
@@ -49,46 +53,60 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #1c1714;
-    --surface: #241e1a;
-    --surface-2: #2f2722;
-    --rail: #15110f;
-    --text: #f3ebe1;
-    --muted: #b9a999;
-    --border: #3d332c;
-    --accent: #f5b04a;
-    --accent-ink: #2a1a05;
-    --accent-text: #f5b04a;
-    --accent-soft: #3a2a14;
+    --bg: #15121c;
+    --surface: #1d1928;
+    --surface-2: #272136;
+    --rail: #100d16;
+    --text: #eeeaf6;
+    --muted: #a9a0bd;
+    --border: #342c46;
+    --accent: #a78bfa;
+    --accent-ink: #1a0f33;
+    --accent-text: #c4b5fd;
+    --accent-soft: #2e2250;
     --danger: #f07b6f;
     --danger-ink: #2a0806;
     --ok: #6cc28c;
-    --focus: #f5b04a;
-    --stage: #120e0c;
-    --tile: #231c18;
+    --focus: #c4b5fd;
+    --stage: #0e0b14;
+    --tile: #1c1727;
+    --tile-avatar: #3b2f5c;
+    --tile-avatar-text: #e4dcff;
+    --stage-text: #eeeaf6;
+    --ctrl: #2a2338;
+    --ctrl-hover: #372e49;
+    --overlay: rgba(10, 8, 16, 0.72);
+    --scrim: rgba(8, 6, 14, 0.6);
     --shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
     color-scheme: dark;
   }
 }
 
 :root[data-theme='dark'] {
-  --bg: #1c1714;
-  --surface: #241e1a;
-  --surface-2: #2f2722;
-  --rail: #15110f;
-  --text: #f3ebe1;
-  --muted: #b9a999;
-  --border: #3d332c;
-  --accent: #f5b04a;
-  --accent-ink: #2a1a05;
-  --accent-text: #f5b04a;
-  --accent-soft: #3a2a14;
+  --bg: #15121c;
+  --surface: #1d1928;
+  --surface-2: #272136;
+  --rail: #100d16;
+  --text: #eeeaf6;
+  --muted: #a9a0bd;
+  --border: #342c46;
+  --accent: #a78bfa;
+  --accent-ink: #1a0f33;
+  --accent-text: #c4b5fd;
+  --accent-soft: #2e2250;
   --danger: #f07b6f;
   --danger-ink: #2a0806;
   --ok: #6cc28c;
-  --focus: #f5b04a;
-  --stage: #120e0c;
-  --tile: #231c18;
+  --focus: #c4b5fd;
+  --stage: #0e0b14;
+  --tile: #1c1727;
+  --tile-avatar: #3b2f5c;
+  --tile-avatar-text: #e4dcff;
+  --stage-text: #eeeaf6;
+  --ctrl: #2a2338;
+  --ctrl-hover: #372e49;
+  --overlay: rgba(10, 8, 16, 0.72);
+  --scrim: rgba(8, 6, 14, 0.6);
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
   color-scheme: dark;
 }
@@ -1037,7 +1055,7 @@ select {
   transition: outline-color 0.12s;
 }
 
-/* The identity motif: whoever is talking gets the marigold ring, here and in the sidebar. */
+/* The identity motif: whoever is talking gets the accent ring, here and in the sidebar. */
 .tile.speaking {
   outline-color: var(--accent);
 }
@@ -1059,8 +1077,8 @@ select {
 }
 
 .tile-avatar .avatar {
-  background: #4a3a2c;
-  color: #fcebc9;
+  background: var(--tile-avatar);
+  color: var(--tile-avatar-text);
 }
 
 .filmstrip .avatar-lg {
@@ -1079,7 +1097,7 @@ select {
   gap: 6px;
   padding: 4px 10px;
   border-radius: var(--r);
-  background: rgba(18, 12, 8, 0.72);
+  background: var(--overlay);
   color: var(--stage-text);
   font-size: 13px;
   font-weight: 600;
@@ -1101,7 +1119,7 @@ select {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: rgba(18, 12, 8, 0.6);
+  background: var(--overlay);
   color: var(--stage-text);
   opacity: 0;
 }
@@ -1112,7 +1130,7 @@ select {
 }
 
 .tile-focus:hover {
-  background: rgba(18, 12, 8, 0.85);
+  background: var(--stage);
   color: #fff;
 }
 
@@ -1154,17 +1172,17 @@ select {
 }
 
 .ctrl:focus-visible {
-  outline-color: #f5b04a;
+  outline-color: var(--accent);
 }
 
 .ctrl.on {
-  background: #f3ebe1;
+  background: var(--stage-text);
   color: #b3261e;
 }
 
 .ctrl.sharing {
-  background: #f5b04a;
-  color: #2a1a05;
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
 .ctrl-leave {
@@ -1267,7 +1285,7 @@ select {
 }
 
 .dialog::backdrop {
-  background: rgba(34, 22, 12, 0.5);
+  background: var(--scrim);
 }
 
 .dialog-head {
@@ -1427,7 +1445,7 @@ select {
     position: fixed;
     inset: 0;
     z-index: 10;
-    background: rgba(34, 22, 12, 0.45);
+    background: var(--scrim);
   }
 }
 
@@ -1485,7 +1503,7 @@ select {
     position: fixed;
     inset: 0;
     z-index: 10;
-    background: rgba(34, 22, 12, 0.45);
+    background: var(--scrim);
   }
 
   .only-narrow {
