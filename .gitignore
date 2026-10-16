@@ -3,3 +3,6 @@ data/
 *.db
 *.db-*
 .env
+
+# Private run notes, kept on this machine
+LOCAL.md
