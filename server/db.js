@@ -79,6 +79,9 @@ export function openDatabase(dbPath) {
   }
   const db = new DatabaseSync(dbPath);
   db.exec('PRAGMA journal_mode = WAL;');
+  // With WAL, NORMAL skips the fsync on every commit (each chat message) and still can't corrupt
+  // the database; a power cut can at most drop the last few commits.
+  db.exec('PRAGMA synchronous = NORMAL;');
   db.exec(SCHEMA);
   if (dbPath !== ':memory:') {
     try {
